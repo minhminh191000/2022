@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="input_location" name="Weather Forecast">
+                    <div class="container">
+                        <form role="form" action="weather_forecast_location" method="POST">
+                            <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()" />
+                            <div class="form-group">
+                                <lable for='name'>Name</lable>
+                                <input type="text" name="name" t-att-value="name" id="name" class="form-control" placeholder="Nguyen Van Minh"  required="required"/>
+                                <button type="submit" class="btn btn-primary pull-left" >Submit</button>
+                            </div>
+                        </form>
+                    </div>
+    </template>
+
+</odoo>

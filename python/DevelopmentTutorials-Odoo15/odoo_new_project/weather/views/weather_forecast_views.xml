@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>    
+    <template id="show_weather_forecast" name="show_weather_forecast">
+            <dev class="container">
+                <t t-foreach="qcontext" t-as="qt">
+                    <t t-esc="qt.name"/>
+                    <t t-esc="qt.temp_C"/>
+                    <t t-esc="qt.wind_degree"/>
+                </t>
+            </dev>
+    </template>
+</odoo> 

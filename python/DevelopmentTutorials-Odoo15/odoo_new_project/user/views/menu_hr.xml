@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+        <record id="hr.open_view_employee_tree" model="ir.actions.act_window" >
+            <field name="name">Employees</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="hr.view_employee_tree"/>
+        </record>
+
+
+        <record id="hr.open_view_employee_list_my" model="ir.actions.act_window">
+            <!-- <field name="name">Employees</field> -->
+            <field name="view_mode">tree,kanban,form,activity</field>
+        </record>
+<!-- menu_hr_department_kanban -->
+        <record id="hr.menu_hr_employee_payroll" model="ir.ui.menu">
+            <field name="name">Employees</field>
+            <!-- <field name="view_mode">tree,form</field> -->
+        </record>
+        <record id="hr.menu_hr_employee_payroll" model="ir.ui.menu">
+            <field name="name">Employees</field>
+            <!-- <field name="view_mode">tree,form</field> -->
+        </record>
+
+        <menuitem
+                id="work_locations"
+                name="Work Locations"
+                parent="hr.menu_hr_root"
+                action="hr.hr_work_location_action"
+                groups="hr.group_hr_user"
+                sequence="10"/>
+
+                
+        <menuitem
+            id="hr.menu_human_resources_configuration"
+            name="Configuration"
+            parent="hr.menu_hr_root"
+            groups="hr.group_hr_user"
+            sequence="100"/>
+
+</odoo>

@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_weather_employeemodels_user,weather_employeemodels.user,model_weather_employeemodels,weather.group_weather_user,1,0,0,0
+access_weather_employeemodels_manager,weather_employeemodels.manager,model_weather_employeemodels,weather.group_weather_manager,1,1,1,1

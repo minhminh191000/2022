@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- View Inheritance In Odoo | Extend Views in Odoo  -->
+
+
+    <record id="{id_record}" model="{model tuong uong voi model ke thua vd (ir.ui.view or ir.ui.menu)}">
+        <field name="name"> { name_inherit } </field>
+        <field name="model"> {module_name.model_name} </field>
+        <field name="inherit_id" ref="{module_name.id_record ke thua }"/>
+        <field name="arch" type="xml">
+            <!--  theem vao dang sau -->
+            <field name="id" position="after">
+                <field name="name"/>
+            </field>
+            
+            <!--  theem vao dang truoc -->
+            <field name="id" position="before">
+                <field name="name"/>
+            </field>
+
+            <!--  xpath  thuong dung de them khung them cac truong-->
+            <xpath expr="//form//sheet" position="inside">
+                <field name="name"/>
+            </xpath>
+
+
+            <!-- ke thua tuyet doi bang xpath -->
+            <xpath expr="//form//sheet//field[@name='{id_field}']" position="inside">
+                <field name="name"/>
+            </xpath>
+
+
+            <!-- ke thua tuyet doi bang xpath them page -->
+            <xpath expr="//notebook" position="inside">
+                <page string="string_name">
+                    ...................
+                </page>
+            </xpath>
+
+            <!--  chen them -->
+            <xpath expr="//header" position="inside">
+                <button string="name" name="action_name" type="object" class="oe_highlight"/>
+            </xpath>
+
+            <!--  xoa -->
+            <xpath expr="//page[@id='page3']" position="replace" />
+
+            <!--  sua doi thuoc tinh -->
+            <field name="name" position="attribute">
+            
+                <attribute name="required" >1</attribute>
+                <attribute name="readonly" >1</attribute>
+            </field>
+        </field>
+    </record>
+
+</odoo>

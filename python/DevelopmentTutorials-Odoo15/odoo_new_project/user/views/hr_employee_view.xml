@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <data>
+
+        <record id="hr_employee_form_inherits" model="ir.ui.view">
+            <field name="name">hr.employee.inherit</field>
+            <field name="model">hr.employee</field>
+            <field name="inherit_id" ref="hr.view_employee_form"/>
+            <field name="arch" type="xml">
+
+
+
+
+                <xpath expr="//header//button" position="replace" />
+                <xpath expr="//header" position="inside">
+                    <button string="Active"  class="oe_highlight"/>
+                </xpath>
+
+                <field name="active"  position="after">
+                    <field name="user_id" invisible="1"/>   
+                </field>
+                <field name="job_title" position="replace"/>
+                <field name="category_ids" position="replace"/>
+                <field name="mobile_phone" position="replace"/>
+                <field name="parent_id" position="replace"/>
+                <field name="coach_id" position="replace"/>
+                <page name="public" position="replace"/>
+                <page name="personal_information" position="replace"/>
+                <page name="hr_settings" position="replace"/>
+                <field name="work_phone" position="before">
+                    <field name="staff_id" placeholder="10002" required="True"/>
+                    <field name="user_name" placeholder="admin" required="True"/>
+                    <field name="password" password="True"/>
+                </field>
+                <field name="department_id" position="after">
+                    <field name="role" />
+                    <field name="address_id"
+                            context="{'show_address': 1}"
+                            options='{"always_reload": True, "highlight_first_line": True}'/>
+                    <field name="work_location_id" context="{'default_address_id': address_id}"/>
+                </field>
+            </field>
+        </record> 
+
+        <record id="hr_employee_tree_inherit" model="ir.ui.view">
+            <field name="name">hr.employee.tree.inherit</field>
+            <field name="model">hr.employee</field>
+            <field name="inherit_id" ref="hr.view_employee_tree"/>
+            <field name="arch" type="xml">
+
+                <!--  delete action delete -->
+                <xpath expr="//tree" position="attributes">
+                    <attribute name="delete">false</attribute>
+                </xpath>
+
+
+                <field name="activity_ids" position="replace"/>
+                <field name="activity_date_deadline" position="replace"/>
+                <field name="department_id" position="replace"/>
+                <field name="job_id" position="replace"/>
+                <field name="parent_id" position="replace"/>
+                <field name="name" position="after">
+                    <field name="staff_id"/>
+                    <field name="user_name"/>
+                </field>
+
+
+                <field name="work_email" position="after">
+                    <field name="role"/>
+                    <field name="status"/>
+                    <button name="read" type ="object" class="btn btn-secondary fa fa-book " title="show" aria-label="show"/>
+                    <button class="btn btn-secondary fa fa-pencil-square-o" title="edit" aria-label="edit"/>
+                    <button name="unlink" type ="object" class="btn btn-secondary fa fa-trash-o " title="delete" aria-label="delete"/>
+                    <button class="btn btn-secondary fa fa-eye " title="Active" aria-label="Active" />
+
+                    
+                </field>
+            </field>
+        </record>
+
+    </data>
+    
+
+</odoo>
+
+<!-- 
+
+    position lever
+
+    after
+    before
+    inside
+    replace
+    attributes
+ -->

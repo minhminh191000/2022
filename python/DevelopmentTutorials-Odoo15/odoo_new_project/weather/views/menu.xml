@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+        <menuitem id="menu_weather_root"
+            name="Weather"
+            action="weather.weather_employeemodels_action"
+            sequence="0"
+            groups="group_weather_user"/>
+        
+        <!-- <menuitem id="menu_weather_master"
+            name="Employee"
+            parent="menu_weather_root"
+            action="website.templates"
+            sequence="10"
+            groups="group_weather_user"/> -->
+</odoo>

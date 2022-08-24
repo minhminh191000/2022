@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <template id="weather_xml" name="weather_xml">
+            <div class="container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th> name </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                            <tr>
+                                <td> cay
+                                    <t t-foreach="data" t-as="data">
+                                        <t t-esc="data.address"></t>
+                                        <t t-esc="data.temp"/>
+                                        <t t-esc="data.wind"/>
+                                    </t>
+                                </td>
+                            </tr>
+                    </tbody>
+                </table>
+            </div>
+    </template>
+ 
+</odoo>
